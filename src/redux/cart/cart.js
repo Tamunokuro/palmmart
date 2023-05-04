@@ -27,11 +27,16 @@ const cartSlice = createSlice({
       };
     },
     removeFromCart: (state, action) => {
-      const removedItem = state.mycart.filter((item) => item.id !== action.payload);
+      const indexToRemove = state.mycart.findIndex((item) => item.id === action.payload);
+      if (indexToRemove === -1) {
+        return state; // Item not found, do not modify state
+      }
+      const newMycart = [...state.mycart];
+      newMycart.splice(indexToRemove, 1);
       return {
         ...state,
         itemCount: state.itemCount - 1,
-        mycart: removedItem,
+        mycart: newMycart,
       };
     },
   },
