@@ -19,10 +19,7 @@ function CardContainer() {
       {items.length === 0 ? (<h3>Loading....</h3>) : (items.map((card) => (
         <CardItem
           key={card.id}
-          image={card.image}
-          title={card.title}
-          text={card.text}
-          price={card.price}
+          card={card}
         />
       )))}
     </div>

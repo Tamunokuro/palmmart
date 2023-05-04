@@ -10,24 +10,29 @@ const cartSlice = createSlice({
   initialState: {
     items: [],
     itemCount: 0,
+    mycart: [],
     status: false,
     error: '',
   },
   reducers: {
-    addToCart: (state) => {
-      const newState = {
+    addToCart: (state, action) => {
+      const newItem = state.items.find((item) => item.id === action.payload);
+      if (!newItem) {
+        return state; // Item not found, do not modify state
+      }
+      return {
         ...state,
         itemCount: state.itemCount + 1,
+        mycart: [...state.mycart, newItem],
       };
-      return newState;
     },
-
     removeFromCart: (state, action) => {
-      const updatedCart = {
+      const removedItem = state.mycart.filter((item) => item.id !== action.payload);
+      return {
         ...state,
-        items: state.items.filter((item) => item.id !== action.payload),
+        itemCount: state.itemCount - 1,
+        mycart: removedItem,
       };
-      return updatedCart;
     },
   },
 

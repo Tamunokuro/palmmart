@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -7,6 +9,7 @@ import PalmMart from '../assets/palm-tree-logo.png';
 import Cart from '../assets/carts.png';
 
 function MyNavbar() {
+  const { itemCount } = useSelector((state) => state.cart);
   return (
     <Navbar bg="light" variant="light">
       <Container>
@@ -17,14 +20,18 @@ function MyNavbar() {
           <Nav.Link href="#home">Accessories</Nav.Link>
           <Nav.Link href="#features">Gadgets</Nav.Link>
         </Nav>
-        <a role="button" href="www.">
-          <img src={Cart} alt="cart" width={25} height={30} />
-          <div className="d-inline-flex badge top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            <span id="item__counter">
-              0
-            </span>
-          </div>
-        </a>
+        <Nav>
+          <Nav.Link>
+            <Link to="/mycart">
+              <img src={Cart} alt="cart" width={25} height={30} />
+              <div className="d-inline-flex badge top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span id="item__counter">
+                  {itemCount}
+                </span>
+              </div>
+            </Link>
+          </Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );
