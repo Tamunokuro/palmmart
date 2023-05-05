@@ -13,9 +13,9 @@ function MyCart() {
         <Card key={card.id} style={{ width: '25rem', height: '30rem' }} className="card">
           <Card.Img variant="top" src={card.image} width={50} height={200} />
           <Card.Body>
-            <Card.Title>{card.title}</Card.Title>
-            <p>
-              $
+            <Card.Title className="h4 fw-bold">{card.title}</Card.Title>
+            <p className="h5 fw-bold">
+              £
               {card.price}
             </p>
             <Button variant="primary" onClick={() => dispatch(removeFromCart(card.id))}>Remove from Cart</Button>

@@ -11,6 +11,8 @@ const cartSlice = createSlice({
     items: [],
     itemCount: 0,
     mycart: [],
+    quantity: 0,
+    total: 0,
     status: false,
     error: '',
   },
@@ -39,6 +41,11 @@ const cartSlice = createSlice({
         mycart: newMycart,
       };
     },
+
+    updateQuantity: (state, action) => ({
+      ...state,
+      quantity: action.payload,
+    }),
   },
 
   extraReducers: (builder) => {
@@ -61,5 +68,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
