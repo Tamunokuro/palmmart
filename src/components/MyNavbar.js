@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -20,14 +21,14 @@ function MyNavbar() {
           <Nav.Link href="#features">Gadgets</Nav.Link>
         </Nav>
         <Nav>
-          <a href="/mycart">
+          <Link to="/mycart">
             <img src={Cart} alt="cart" width={25} height={30} />
             <div className="d-inline-flex badge top-0 start-100 translate-middle badge rounded-pill bg-danger">
               <span id="item__counter">
                 {itemCount}
               </span>
             </div>
-          </a>
+          </Link>
         </Nav>
       </Container>
     </Navbar>
