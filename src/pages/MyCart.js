@@ -9,7 +9,7 @@ function MyCart() {
 
   return (
     <div className="cards--container">
-      {item.length === 0 ? (<h3>Your Cart is empty</h3>) : (item.map((card) => (
+      {item.length === 0 ? (<h5><i>YOUR CART IS EMPTY</i></h5>) : (item.map((card) => (
         <Card key={card.id} style={{ width: '25rem', height: '30rem' }} className="card">
           <Card.Img variant="top" src={card.image} width={50} height={200} />
           <Card.Body>
