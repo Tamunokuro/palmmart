@@ -1,24 +1,14 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Card, Form, Button } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { useDispatch } from 'react-redux';
+import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { addToCart, updateQuantity } from '../redux/cart/cart';
+import { addToCart } from '../redux/cart/cart';
 
 function CardItem({ card }) {
-  const itemCount = useSelector((state) => state.cart.itemCount);
   const dispatch = useDispatch();
 
-  const handleQuantityChange = (event, id) => {
-    const quantity = event.target.value;
-    dispatch(updateQuantity(id, quantity));
-  };
-
   const addItem = (id) => {
-    const itemsCount = document.getElementById('item__counter');
     dispatch(addToCart(id));
-    itemsCount.innerHTML = itemCount;
   };
 
   return (
@@ -30,24 +20,6 @@ function CardItem({ card }) {
           £
           {card.price}
         </p>
-        <Form>
-          <Row className="my-1">
-            <Form.Group controlId={`quantitySelect-${card.id}`}>
-              <Col xs={6}>
-                <Form.Label className="h6 fw-bold">Quantity:</Form.Label>
-              </Col>
-              <Col xs={6}>
-                <Form.Select onChange={(event) => handleQuantityChange(event, card.id)} width={25}>
-                  {[...Array(card.stockCount)].map((_, index) => (
-                    <option key={`option-${index + 1}`} value={index + 1}>
-                      {index + 1}
-                    </option>
-                  ))}
-                </Form.Select>
-              </Col>
-            </Form.Group>
-          </Row>
-        </Form>
         <Button variant="primary" onClick={() => addItem(card.id)}>Add to Cart</Button>
       </Card.Body>
     </Card>
@@ -60,7 +32,6 @@ CardItem.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    stockCount: PropTypes.number,
   }).isRequired,
 };
 

@@ -9,7 +9,7 @@ import PalmMart from '../assets/palm-tree-logo.png';
 import Cart from '../assets/carts.png';
 
 function MyNavbar() {
-  const { itemCount } = useSelector((state) => state.cart);
+  const itemCount = useSelector((state) => state.cart.itemCount);
   return (
     <Navbar bg="light" variant="light">
       <Container>
