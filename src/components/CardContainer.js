@@ -12,7 +12,7 @@ function CardContainer() {
   useEffect(() => {
     if (items.length) return;
     dispatch(fetchCart());
-  }, [dispatch, items.length]);
+  }, [dispatch, items]);
 
   return (
     <div className="cards--container">

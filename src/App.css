@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans&family=Satisfy&display=swap');
 
 .brand-name {
-    font-family: 'Satisfy', cursive;
+  font-family: 'Satisfy', cursive;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 
 .footer {
   left: 0;
-  bottom:0;
+  bottom: 0;
   right: 0;
   height: 3rem;
   background-color: #b6b60c;
@@ -26,16 +26,17 @@ body {
 }
 
 .footer a {
- text-decoration: none;
+  text-decoration: none;
 }
 
 .cards--container {
   display: flex;
   flex-wrap: wrap;
+
   /* flex-grow: 1 1; */
   justify-content: space-between;
   padding: 1rem;
-  gap: 25px;
+  gap: 20px;
 }
 
 .card {
