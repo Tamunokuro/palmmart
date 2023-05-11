@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Julius+Sans+One&family=Montserrat&family=Poppins:wght@500&family=Satisfy&family=Ubuntu+Mono&display=swap');
 
-
-body, #root {
+body,
+#root {
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +16,7 @@ body, #root {
 .footer {
   position: relative;
   left: 0;
-  bottom: 0; 
+  bottom: 0;
   width: 100%;
   right: 0;
   height: 1rem;
