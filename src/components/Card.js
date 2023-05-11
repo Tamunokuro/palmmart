@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { addToCart } from '../redux/cart/cart';
+import '../App.css';
 
 function CardItem({ card }) {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function CardItem({ card }) {
   };
 
   return (
-    <Card style={{ width: '25rem', height: '30rem' }} className="card">
+    <Card style={{ width: '25rem', height: '30rem' }} className="card border-0">
       <Card.Img variant="top" src={card.image} width={50} height={200} />
       <Card.Body>
         <Card.Title className="h4 fw-bold">{card.title}</Card.Title>

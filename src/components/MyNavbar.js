@@ -11,25 +11,27 @@ import Cart from '../assets/carts.png';
 function MyNavbar() {
   const itemCount = useSelector((state) => state.cart.itemCount);
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar className="brand-name" bg="light" variant="light" expand="lg" collapseOnSelect>
       <Container>
         <img src={PalmMart} alt="logo" width={40} height={40} />
-        <Navbar.Brand href="/" className="brand-name">PalmMart</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Mens Clothing</Nav.Link>
-          <Nav.Link href="#home">Accessories</Nav.Link>
-          <Nav.Link href="#features">Gadgets</Nav.Link>
-        </Nav>
-        <Nav>
-          <Link to="/mycart">
-            <img src={Cart} alt="cart" width={25} height={30} />
-            <div className="d-inline-flex badge top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              <span id="item__counter">
-                {itemCount}
-              </span>
-            </div>
-          </Link>
-        </Nav>
+        <Navbar.Brand href="/">PalmMart</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Items</Nav.Link>
+            <Nav.Link href="#home">Explore</Nav.Link>
+          </Nav>
+          <Nav>
+            <Link to="/mycart">
+              <img src={Cart} alt="cart" width={25} height={30} />
+              <div className="translate-middle badge rounded-pill bg-danger">
+                <span id="item__counter">
+                  {itemCount}
+                </span>
+              </div>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

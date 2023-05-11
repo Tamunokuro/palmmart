@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCart } from '../redux/cart/cart';
 import CardItem from './Card';
-// import cardItems from '../data/data.json';
+import Footer from './Footer';
 import '../App.css';
 
 function CardContainer() {
@@ -15,14 +15,17 @@ function CardContainer() {
   }, [dispatch, items]);
 
   return (
-    <div className="cards--container">
-      {items.length === 0 ? (<h3>Loading....</h3>) : (items.map((card) => (
-        <CardItem
-          key={card.id}
-          card={card}
-        />
-      )))}
-    </div>
+    <>
+      <div className="cards--container">
+        {items.length === 0 ? (<h3>Loading....</h3>) : (items.map((card) => (
+          <CardItem
+            key={card.id}
+            card={card}
+          />
+        )))}
+      </div>
+      <Footer />
+    </>
   );
 }
 

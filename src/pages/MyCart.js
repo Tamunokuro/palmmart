@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { removeFromCart } from '../redux/cart/cart';
@@ -24,8 +25,15 @@ function MyCart() {
         <a role="button" target="_blank" href="www" className="btn btn-success fw-bold p-3" type="button">Checkout</a>
       </div>
       <div className="cards--container">
-        {item.length === 0 ? (<h5><i>YOUR CART IS EMPTY</i></h5>) : (item.map((card) => (
-          <Card key={card.id} style={{ width: '25rem', height: '30rem' }} className="card">
+        {item.length === 0 ? (
+          <div className="container text-center">
+            <h5>YOUR CART IS EMPTY</h5>
+            <h5><Link to="/">Continue Shopping</Link></h5>
+            {' '}
+
+          </div>
+        ) : (item.map((card) => (
+          <Card key={card.id} style={{ width: '25rem', height: '30rem' }} className="card border-0">
             <Card.Img variant="top" src={card.image} width={50} height={200} />
             <Card.Body>
               <Card.Title className="h4 fw-bold">{card.title}</Card.Title>
