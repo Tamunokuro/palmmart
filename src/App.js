@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MyNavbar from './components/MyNavbar';
 // import Footer from './components/Footer';
-import Homepage from './components/Homepage';
+import Homepage from './pages/Homepage';
 import MyCart from './pages/MyCart';
 
 function App() {

@@ -40,14 +40,6 @@ const cartSlice = createSlice({
         mycart: newMycart,
       };
     },
-    getTotalPrice: (state) => {
-      const cartTotal = state.mycart.reduce((total, item) => total + item.price, 0);
-      return {
-        ...state,
-        total: cartTotal,
-      };
-    },
-
   },
 
   extraReducers: (builder) => {

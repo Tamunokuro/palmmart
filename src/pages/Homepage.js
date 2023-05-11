@@ -1,4 +1,4 @@
-import CardContainer from './CardContainer';
+import CardContainer from '../components/CardContainer';
 
 function Homepage() {
   return (
