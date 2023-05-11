@@ -1,2 +1,2 @@
 # Palmmart
-> This is a react eccomerce application
+> This is a react ecomerce application
