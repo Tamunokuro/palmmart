@@ -1,7 +1,7 @@
 # Palmmart
 > This is a react ecomerce application.
 
-## Tools and Technologies
+## ⚒️ Tools and Technologies
 - React
 - React Bootstrap
 - Redux
