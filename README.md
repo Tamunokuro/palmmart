@@ -12,6 +12,8 @@
 - React.js
 - Redux
 - Redux Toolkit
+- React Bootstrap
 
 ## Setup
-- To get a copy of this project, run `git clone `
+- To get a copy of this project, run `git clone git@github.com:Tamunokuro/palmmart.git`
+- cd into the directory and run `npm install`
