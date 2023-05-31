@@ -17,3 +17,6 @@
 ## Setup
 - To get a copy of this project, run `git clone git@github.com:Tamunokuro/palmmart.git`
 - cd into the directory and run `npm install`
+- To run this project, run `npm start`
+
+
